@@ -18,7 +18,7 @@ spec:
           image: cccortesh/mlops-api:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 10000
           envFrom:
             - configMapRef:
                 name: api-config
@@ -34,14 +34,14 @@ spec:
           readinessProbe:
             httpGet:
               path: /health
-              port: 8000
+              port: 10000
             initialDelaySeconds: 15
             periodSeconds: 10
             timeoutSeconds: 5
           livenessProbe:
             httpGet:
               path: /health
-              port: 8000
+              port: 10000
             initialDelaySeconds: 30
             periodSeconds: 20
             timeoutSeconds: 5
