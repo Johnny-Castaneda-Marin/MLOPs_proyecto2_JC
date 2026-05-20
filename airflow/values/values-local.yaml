@@ -88,6 +88,8 @@ triggerer:
 # PostgreSQL interno de Airflow (metadatos de Airflow, NO datos del proyecto)
 postgresql:
   enabled: true
+  image:
+    pullPolicy: Never
   resources:
     requests:
       cpu: "100m"

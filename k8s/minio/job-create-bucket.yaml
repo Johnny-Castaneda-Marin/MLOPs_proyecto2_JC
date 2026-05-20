@@ -11,6 +11,7 @@ spec:
       initContainers:
         - name: wait-for-minio
           image: busybox:1.36
+          imagePullPolicy: Never
           command:
             - /bin/sh
             - -c
@@ -31,6 +32,7 @@ spec:
       containers:
         - name: mc
           image: minio/mc:latest
+          imagePullPolicy: Never
           command:
             - /bin/sh
             - -c
